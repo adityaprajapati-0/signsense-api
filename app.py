@@ -4,6 +4,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import math
+import os
 
 app = Flask(__name__)
 CORS(app)  # allow browser calls from your PHP domain
@@ -172,5 +173,6 @@ def api_handsign():
 
 
 if __name__ == "__main__":
-    # Local dev; on Render gunicorn will run app:app
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Get port from environment variable for Render deployment
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
