@@ -1,4 +1,4 @@
-# app.py
+# app.py - Updated 2026-02-15
 # Flask backend for SignSense – receives MediaPipe landmarks and returns a sign label.
 
 from flask import Flask, request, jsonify
